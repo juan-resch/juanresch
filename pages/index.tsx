@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </motion.div>
       {/* about */}
-      <div id="about" className="flex w-screen min-h-[50vh] items-center justify-center">
+      <div id="about" className="flex w-screen min-h-[100vh] items-center justify-center">
         <div className="flex flex-col w-full max-w-[1024px] py-10">
           <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
             <div className="flex flex-col mt-10 self-center mb-20">
