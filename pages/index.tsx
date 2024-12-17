@@ -38,33 +38,67 @@ export default function Home() {
               <span className="text-amber-100 text-3xl">Olá, eu sou</span>
               <span className="text-white font-bold text-9xl">Juan Resch</span>
               <span className="text-amber-100 font-bold text-3xl">Desenvolvedor Fullstack Node.js</span>
-              <a
-                className="hover:translate-x-1 group transition-all h-12 w-52 mt-2 rounded-md bg-amber-50 text-zinc-950 font-bold flex items-center justify-center"
-                href="#about"
-              >
-                Sobre
-                <ChevronRight
-                  className="opacity-0 translate-x-[-10px] group-hover:translate-x-0 group-hover:opacity-100 duration-150"
-                  size={20}
-                  color="#222"
-                />
-              </a>
+              <div className="flex gap-2">
+                <a
+                  className="group transition-all h-12 w-52 mt-2 pl-3 rounded-md bg-amber-50 text-zinc-950 font-bold flex items-center justify-center"
+                  href="#about"
+                >
+                  Sobre
+                  <ChevronRight
+                    className="opacity-0 translate-x-[-10px] group-hover:translate-x-0 group-hover:opacity-100 duration-150"
+                    size={20}
+                    color="#222"
+                  />
+                </a>
+                <a
+                  className="group transition-all h-12 w-52 mt-2 pl-3 rounded-md bg-gradient-to-r from-purple-600 via-purple-400 to-purple-800 text-zinc-950 font-bold flex items-center justify-center"
+                  href="#projects"
+                >
+                  Projetos
+                  <ChevronRight
+                    className="opacity-0 translate-x-[-10px] group-hover:translate-x-0 group-hover:opacity-100 duration-150"
+                    size={20}
+                    color="#222"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </motion.div>
       {/* about */}
-      <div id="about" className="flex w-screen min-h-[70vh] items-center justify-center bg-zinc-950">
+      <div id="about" className="flex w-screen min-h-[50vh] items-center justify-center">
         <div className="flex flex-col w-full max-w-[1024px] py-10">
           <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
-            <img className="h-52 w-52 rounded-full border border-zinc-200 shadow-xl" src="me.jpg" />
-            <div className="flex flex-col">
-              <span className="text-5xl">Sobre</span>
-              <span className="text-zinc-100 text-lg max-w-[560px]">
+            <div className="flex flex-col mt-10 self-center mb-20">
+              <span className="text-5xl mb-2">Sobre</span>
+              <span className="text-zinc-100 text-xl max-w-[650px]">
                 Desenvolvedor Fullstack com 3 anos de experiência criando soluções inteligentes e escaláveis. Especialista em
                 Node.js, já contribui para projetos como plataformas bancárias (BaaS), sistemas SaaS e automação de
                 processos, entregando resultados que transformam negócios.
               </span>
+            </div>
+            <div
+              style={{
+                background: 'url(small_radial.svg)',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100%',
+              }}
+              className="relative p-16"
+            >
+              <img className="w-[400px] object-contain" src="me.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="projects" className="flex w-screen min-h-[100vh] items-center justify-center">
+        <div className="flex flex-col w-full max-w-[1024px] py-10">
+          <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
+            <div className="flex flex-col">
+              <span className="text-5xl">Projetos</span>
+              <div className="flex flex-wrap gap-2">
+                <div></div>
+              </div>
             </div>
           </div>
         </div>
