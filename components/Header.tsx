@@ -17,9 +17,9 @@ export const Header = () => {
   }, [])
 
   return (
-    <div className="fixed pb-4 group flex w-screen left-0 items-center justify-center z-30">
+    <div className="fixed pb-4 group flex w-screen h-40 top-0 left-0 items-center justify-center z-30">
       <div
-        className={`flex opacity-[${isScrolled ? '0.1' : '100'}] ${
+        className={`flex ${isScrolled ? 'opacity-10' : 'opacity-100'} ${
           isScrolled ? 'translate-y-[-30px]' : ''
         } group-hover:opacity-100 group-hover:translate-y-0 w-[1200px] duration-300 glass rounded-xl h-12 items-center justify-between px-20`}
       >
