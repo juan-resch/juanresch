@@ -2,6 +2,7 @@ import localFont from 'next/font/local'
 import * as motion from 'framer-motion/client'
 import { Header } from '@/components/Header'
 import { ChevronDown, ChevronRight } from 'lucide-react'
+import { Project } from '@/components/Project'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -94,10 +95,10 @@ export default function Home() {
       <div id="projects" className="flex w-screen min-h-[100vh] items-center justify-center">
         <div className="flex flex-col w-full max-w-[1024px] py-10">
           <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <span className="text-5xl">Projetos</span>
-              <div className="flex flex-wrap gap-2">
-                <div></div>
+              <div className="grid grid-cols-2 w-full gap-2 mt-2">
+                <Project />
               </div>
             </div>
           </div>
