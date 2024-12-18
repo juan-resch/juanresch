@@ -1,8 +1,10 @@
 import localFont from 'next/font/local'
 import * as motion from 'framer-motion/client'
 import { Header } from '@/components/Header'
-import { ChevronDown, ChevronRight } from 'lucide-react'
+import { ChevronRight, Images } from 'lucide-react'
 import { Project } from '@/components/Project'
+
+import Masonry from 'react-masonry-css'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -14,6 +16,15 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
   weight: '100 900',
 })
+
+const projects = [
+  {
+    name: 'Vetfy',
+    description: 'Sistema SaaS completo para gestão de clinicas veterinárias.',
+    url: 'https://www.vetfy.com.br/auth',
+    images: ['/vetfy01.png', '/vetfy02.png', '/vetfy03.png'],
+  },
+]
 
 export default function Home() {
   return (
@@ -97,9 +108,15 @@ export default function Home() {
           <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
             <div className="flex flex-col w-full">
               <span className="text-5xl">Projetos</span>
-              <div className="grid grid-cols-2 w-full gap-2 mt-2">
-                <Project />
-              </div>
+              <Masonry breakpointCols={{ default: 3 }} className="flex w-full gap-4 mt-2">
+                <Project h={400} />
+                <Project h={200} />
+                <Project h={200} />
+                <Project h={300} />
+                <Project h={400} />
+                <Project h={450} />
+                <Project h={300} />
+              </Masonry>
             </div>
           </div>
         </div>

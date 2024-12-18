@@ -1,6 +1,6 @@
-import { useRef } from 'react'
+import { FC, useRef } from 'react'
 
-export const Project = () => {
+export const Project: FC<{ h: number }> = ({ h }) => {
   const elementRef = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -17,7 +17,7 @@ export const Project = () => {
 
       element.style.transform = `perspective(500px) rotateX(${y}deg) rotateY(${x}deg)`
       element.style.transition = `scale 500ms`
-      element.style.scale = `1.05`
+      element.style.scale = `1.02`
     }
   }
 
@@ -34,7 +34,8 @@ export const Project = () => {
   return (
     <div
       ref={elementRef}
-      className="flex bg-white h-[250px] bg-gradient-to-br rounded-md"
+      style={{ height: `${h}px` }}
+      className="flex bg-white rounded-md shadow-lg mt-4"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     ></div>
