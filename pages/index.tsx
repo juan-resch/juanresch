@@ -2,7 +2,7 @@ import localFont from 'next/font/local'
 import * as motion from 'framer-motion/client'
 import { Header } from '@/components/Header'
 import { ChevronRight, Images } from 'lucide-react'
-import { Project } from '@/components/Project'
+import { Project, ProjectProps } from '@/components/Project'
 
 import Masonry from 'react-masonry-css'
 
@@ -17,12 +17,85 @@ const geistMono = localFont({
   weight: '100 900',
 })
 
-const projects = [
+const projects: ProjectProps[] = [
   {
     name: 'Vetfy',
-    description: 'Sistema SaaS completo para gestão de clinicas veterinárias.',
+    description: 'Sistema SaaS completo para gestão de clínicas veterinárias',
     url: 'https://www.vetfy.com.br/auth',
-    images: ['/vetfy01.png', '/vetfy02.png', '/vetfy03.png'],
+    images: [
+      '/projects/vetfy/01.png',
+      '/projects/vetfy/02.png',
+      '/projects/vetfy/03.png',
+      '/projects/vetfy/04.png',
+      '/projects/vetfy/05.png',
+    ],
+    tags: ['Frontend', 'Backend', 'Design'],
+    techs: ['NestJS', 'Vite (React)', 'TailwindCSS', 'Shadcn UI', 'DDD', 'Typescript', 'PostgreSQL', 'TypeORM'],
+  },
+  {
+    name: 'Narrativ',
+    description: 'Sistema para automação de campanhas de serviços de tecnologia e design',
+    url: 'https://www.narrativ.global/',
+    images: [
+      '/projects/narrativ/01.png',
+      '/projects/narrativ/02.png',
+      '/projects/narrativ/03.png',
+      '/projects/narrativ/04.png',
+      '/projects/narrativ/05.png',
+      '/projects/narrativ/06.png',
+      '/projects/narrativ/07.png',
+    ],
+    tags: ['Backend', 'Devops'],
+    techs: ['NestJS', 'DDD', 'Solid', 'TDD', 'Typescript', 'PostgreSQL', 'PrismaORM'],
+  },
+  {
+    name: 'Simplelivery',
+    description: 'Sistema SaaS completo para gestão de delivery',
+    images: ['/projects/simplelivery/01.png', '/projects/simplelivery/02.png', '/projects/simplelivery/03.png'],
+    tags: ['Frontend', 'Backend', 'Design', 'Devops'],
+    techs: ['Next.js', 'Express.js', 'Firebase', 'AWS', 'Typescript', 'PostgreSQL', 'PrismaORM', 'TailwindCSS'],
+  },
+  {
+    name: 'Allsmart',
+    description: 'Sistema para instituições de ensino EAD',
+    images: ['/projects/allsmart/01.png', '/projects/allsmart/02.png', '/projects/allsmart/03.png'],
+    tags: ['Frontend'],
+    techs: ['React', 'JavaScript', 'TailwindCSS'],
+  },
+  {
+    name: 'F18 Foods',
+    description: 'Aplicativo de comércio de alimentos com entrega',
+    images: ['/projects/f18/01.png', '/projects/f18/02.png'],
+    tags: ['Mobile'],
+    techs: ['React Native', 'Expo'],
+  },
+  {
+    name: 'Garage',
+    description: 'Aplicativo para aluguel de carros',
+    url: 'https://garage.lease/',
+    images: ['/projects/garage/01.png', '/projects/garage/02.png', '/projects/garage/03.png'],
+    tags: ['Mobile'],
+    techs: ['React Native', 'Expo'],
+  },
+  {
+    name: 'Medkobe',
+    description: 'Aplicativo de ensino voltado para medicina',
+    url: 'https://medkobe.com/home/',
+    images: ['/projects/medkobe/01.png', '/projects/medkobe/02.png', '/projects/medkobe/03.png', '/projects/medkobe/04.png'],
+    tags: ['Frontend', 'Backend'],
+    techs: ['React Native', 'Expo', 'Express.js'],
+  },
+  {
+    name: 'Sou Campeão',
+    description: 'Aplicativo de apostas esportivas',
+    images: [
+      '/projects/soucampeao/01.png',
+      '/projects/soucampeao/02.png',
+      '/projects/soucampeao/03.png',
+      '/projects/soucampeao/04.png',
+    ],
+    tags: ['Frontend'],
+    techs: ['React Native', 'Expo', 'Express.js'],
   },
 ]
 
@@ -104,18 +177,14 @@ export default function Home() {
         </div>
       </div>
       <div id="projects" className="flex w-screen min-h-[100vh] items-center justify-center">
-        <div className="flex flex-col w-full max-w-[1024px] py-10">
-          <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
+        <div className="flex flex-col w-full max-w-[1200px] py-10">
+          <div className="flex z-10 w-full gap-10 justify-between">
             <div className="flex flex-col w-full">
               <span className="text-5xl">Projetos</span>
               <Masonry breakpointCols={{ default: 3 }} className="flex w-full gap-4 mt-2">
-                <Project h={400} />
-                <Project h={200} />
-                <Project h={200} />
-                <Project h={300} />
-                <Project h={400} />
-                <Project h={450} />
-                <Project h={300} />
+                {projects.map((p, i) => (
+                  <Project key={i} data={p} />
+                ))}
               </Masonry>
             </div>
           </div>
