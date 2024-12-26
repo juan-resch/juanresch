@@ -254,7 +254,7 @@ export default function Home() {
       </section>
       <section className="flex py-32 items-center justify-center w-full bg-black">
         <a
-          href=""
+          href="https://github.com/juan-resch/juanresch"
           className="flex transition-all hover:rounded-2xl items-center justify-center gap-2 border-2 border-zinc-300 rounded-md p-4"
         >
           <span className="font-semibold">Veja o código desse portifolio</span>
