@@ -64,28 +64,27 @@ export const Project: FC<{ data: ProjectProps }> = ({ data }) => {
             onClick={(e) => {
               e.stopPropagation()
             }}
-            className="flex flex-col gap-1 z-40 p-10 rounded-md shadow-md border border-zinc-200 bg-zinc-100 min-w-[1100px] max-w-[1400px] max-h-[75vh] overflow-auto"
+            className="flex flex-col z-40 p-10 rounded-md shadow-md border border-zinc-200 bg-zinc-100 min-w-[1100px] max-w-[1400px] max-h-[75vh] overflow-auto"
           >
             <div className="flex flex-col">
-              <span className="text-black text-4xl">{data.name}</span>
-              <span className="text-zinc-900 text-base">{data.description}</span>
+              <span className="text-black font-bold text-4xl">{data.name}</span>
+              <span className="text-zinc-900 text-lg">{data.description}</span>
             </div>
-            <span className="text-zinc-700 mt-2">Tags</span>
+            <span className="text-zinc-800 text-lg font-semibold mt-2">Tags</span>
             <div className="flex items-center gap-1">
               {data.tags.map((tag, index) => (
-                <div className="text-sm text-white font-semibold bg-black px-3 rounded-full">{tag}</div>
+                <div className="text-xs text-white font-semibold bg-black px-3 py-1 rounded-full">{tag}</div>
               ))}
             </div>
-            <span className="text-zinc-700 mt-2">Techs</span>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 mt-2">
               {data.techs.map((tech, index) => (
-                <div className="text-sm text-white font-semibold bg-black px-3 rounded-full">{tech}</div>
+                <div className="text-xs text-white font-semibold bg-black px-3 py-1 rounded-full">{tech}</div>
               ))}
             </div>
-            <span className="text-zinc-900 text-xl mt-4">Galeria</span>
+            <span className="text-zinc-900 text-lg font-semibold mt-4">Galeria</span>
             <Masonry breakpointCols={{ default: 2 }} className="flex gap-4">
               {data.images.map((image, index) => (
-                <img className="border border-zinc-300 rounded-md overflow-hidden mt-4" src={image} key={index} />
+                <img className="border border-zinc-300 rounded-md overflow-hidden mb-4" src={image} key={index} />
               ))}
             </Masonry>
           </div>
