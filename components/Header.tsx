@@ -25,7 +25,7 @@ export const Header = () => {
       >
         <a href="#">Home</a>
         <a href="#projects">Projetos</a>
-        <a href="#contact">Contato</a>
+        <a href="#experience">Experiência</a>
         <a href="/cv.pdf" className="flex gap-1 items-center cursor-pointer" download="juan-resch-resume.pdf">
           Meu curriculo
         </a>

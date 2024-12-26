@@ -1,10 +1,11 @@
 import localFont from 'next/font/local'
 import * as motion from 'framer-motion/client'
 import { Header } from '@/components/Header'
-import { ChevronRight, Images } from 'lucide-react'
+import { ChevronRight, Code, Code2, Eye, Images } from 'lucide-react'
 import { Project, ProjectProps } from '@/components/Project'
 
 import Masonry from 'react-masonry-css'
+import { Experience, ExperienceProps } from '@/components/Experience'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -99,6 +100,52 @@ const projects: ProjectProps[] = [
   },
 ]
 
+const experiences: ExperienceProps[] = [
+  {
+    title: 'Desenvolvedor Backend | Verteal',
+    description:
+      'Fiz parte da equipe de desenvolvimento backend. Desenvolvi um sistema para automatizar campanhas de uma empresa que presta diversos tipos de serviços de tecnologia como marketing digital e mídias digitais para o mundo todo. Esse sistema proporcionou à empresa uma melhoria significativa na produtividade afetando positivamente centenas de parceiros e clientes.',
+    duration: 'Abril 2024 ~ Agosto 2024',
+    tags: ['TypeScript', 'NestJS', 'Clean Architecture', 'Postgres', 'AWS', 'Digital Ocean'],
+  },
+  {
+    title: 'Desenvolvedor Fullstack | Ajiopay Instituição de Pagamentos',
+    description:
+      'Atuei como desenvolvedor fullstack, trabalhando em um produto BaaS white-label para diversos clientes da empresa, e também desenvolvi um app white-label. Implementei integrações bancárias como Pix, Boleto, TED, P2P, taxas e gerenciamento de contas, entre outros.',
+    duration: 'Jan 2024 ~ Abr 2024',
+    tags: ['TypeScript', 'React', 'React Native', 'Fastify', 'Postgres', 'Prisma', 'Digital Ocean', 'Delbank API'],
+  },
+  {
+    title: 'Desenvolvedor Fullstack | Simplelivery',
+    description:
+      'Desenvolvi um software como serviço (SaaS) completo para automatizar estabelecimentos de fast-food com cardápios digitais integrados com um modelo de assinatura mensal e anual.',
+    duration: 'Jun 2023 ~ Dez 2023',
+    tags: ['TypeScript', 'Next.js', 'React', 'React Native', 'Express.js', 'Postgres', 'Prisma', 'AWS', 'Stripe'],
+  },
+  {
+    title: 'Desenvolvedor de Software | Raion Software House',
+    description:
+      'Atuei como desenvolvedor fullstack em diversos projetos. A empresa funcionava sob demanda, trabalhei em aplicativos e sites de vários tipos: landing pages, plataforma de cursos, controle financeiro, sistema educacional etc. Foi onde adquiri sólidos conhecimentos como desenvolvedor de software.',
+    duration: 'Fev 2021 ~ Jun 2023',
+    tags: [
+      'TypeScript',
+      'JavaScript',
+      'CSS',
+      'HTML',
+      'TailwindCSS',
+      'Next.js',
+      'React',
+      'React Native',
+      'Express.js',
+      'NestJS',
+      'Postgres',
+      'Prisma',
+      'AWS',
+      'Stripe',
+    ],
+  },
+]
+
 export default function Home() {
   return (
     <div className={`${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-sans)]`}>
@@ -109,7 +156,7 @@ export default function Home() {
         src="/background-top.svg"
         className="w-full absolute top-0"
       ></motion.img>
-      <motion.div
+      <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -150,13 +197,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.section>
       {/* about */}
-      <div id="about" className="flex w-screen min-h-[100vh] items-center justify-center">
-        <div className="flex flex-col w-full max-w-[1024px] py-10">
-          <div className="flex z-10 w-full h-[60vh] gap-10 justify-between">
+      <section id="about" className="flex w-screen min-h-[100vh] items-center justify-center">
+        <div className="flex flex-col w-full max-w-[1200px] py-10">
+          <div className="flex z-10 w-full h-[75vh] gap-10 justify-between">
             <div className="flex flex-col mt-10 self-center mb-20">
-              <span className="text-5xl mb-2">Sobre</span>
+              <span className="font-bold text-7xl mb-2">Sobre</span>
               <span className="text-zinc-100 text-xl max-w-[650px]">
                 Desenvolvedor Fullstack com 3 anos de experiência criando soluções inteligentes e escaláveis. Especialista em
                 Node.js, já contribui para projetos como plataformas bancárias (BaaS), sistemas SaaS e automação de
@@ -175,12 +222,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div id="projects" className="flex w-screen min-h-[100vh] items-center justify-center">
+      </section>
+      <section id="projects" className="flex w-screen min-h-[100vh] items-center justify-center">
         <div className="flex flex-col w-full max-w-[1200px] py-10">
           <div className="flex z-10 w-full gap-10 justify-between">
             <div className="flex flex-col w-full">
-              <span className="text-5xl">Projetos</span>
+              <span className="font-bold text-7xl">Projetos</span>
               <Masonry breakpointCols={{ default: 3 }} className="flex w-full gap-4 mt-2">
                 {projects.map((p, i) => (
                   <Project key={i} data={p} />
@@ -189,7 +236,31 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section
+        id="experience"
+        className="flex w-screen min-h-[100vh] items-center justify-center bg-gradient-to-b from-[#0a0a0a] via-zinc-900 to-black pt-40"
+      >
+        <div className="flex gap-6 w-full max-w-[1024px]">
+          <div className="flex flex-col my-10">
+            <span className="font-bold text-7xl mb-10">Experiência Profissional</span>
+            <div className="flex flex-col gap-20">
+              {experiences.map((xp, index) => (
+                <Experience key={index} data={xp} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="flex py-32 items-center justify-center w-full bg-black">
+        <a
+          href=""
+          className="flex transition-all hover:rounded-2xl items-center justify-center gap-2 border-2 border-zinc-300 rounded-md p-4"
+        >
+          <span className="font-semibold">Veja o código desse portifolio</span>
+          <Code2 size={26} color="#aaa" />
+        </a>
+      </section>
     </div>
   )
 }
