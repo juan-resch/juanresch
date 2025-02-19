@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #020202;
+    color: fff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* Estilos para tema claro */
+  body {
+    background-color: #020202;
+    color: #fff;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -11,25 +26,12 @@ body {
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 .glass {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
