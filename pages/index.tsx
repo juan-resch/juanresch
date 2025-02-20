@@ -40,7 +40,7 @@ const projects: ProjectProps[] = [
     images: [
       '/projects/narrativ/01.png',
       '/projects/narrativ/02.png',
-      '/projects/narrativ/03.png',
+      // '/projects/narrativ/03.png',
       '/projects/narrativ/04.png',
       '/projects/narrativ/05.png',
       '/projects/narrativ/06.png',
